@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 import BasicPage from "./BasicPage";
 import AccountPage from "./AccountPage";
-import AddPhoto from "../addPhoto/AddPhoto";
+import AddUserPhoto from "../addUserPhoto/AddUserPhoto";
 import SettingsNav from "./SettingsNav";
 import {updatePassword} from '../../../auth/authActions';
 import {updateProfile} from '../../user/userActions';
@@ -30,7 +30,7 @@ const SettingsDashboard = ({updatePassword, providerId, user, updateProfile}) =>
           render={() => <AccountPage updatePassword={updatePassword} providerId={providerId} />}
           />
            <Route path="/settings/addphoto" 
-          render={() => <AddPhoto AddPhoto={AddPhoto}  />}
+          render={() => <AddUserPhoto AddUserPhoto={AddUserPhoto}  />}
           />
         </Switch>
       </Grid.Column>
