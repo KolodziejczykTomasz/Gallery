@@ -7,7 +7,7 @@ import SettingsDashboard from "../../../features/event/user/Settings/SettingsDas
 import { Container } from "semantic-ui-react";
 import NavBar from "../../../features/event/nav/navBar/NavBar";
 import ModalManager from "../../../features/modals/ModalManager";
-import AddUserPhoto from "../../../features/event/user/addUserPhoto/AddUserPhoto";
+import AddToGallery from "../../../features/event/addToGallery/AddToGallery";
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
               <Container>   
                  <Route exact path="/" component={HomePage} />          
                 <Route path="/event" component={EventDashboard} />
-                <Route path="/adduserphoto" component={AddUserPhoto} />
+                <Route path="/addtogallery" render={() => <AddToGallery uploadImge/>} />
                 <Route path='/settings' component={SettingsDashboard} />
               </Container>
             </Fragment>
@@ -35,4 +35,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-

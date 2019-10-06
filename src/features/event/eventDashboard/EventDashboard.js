@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EventList from "../eventList/EvenList";
 import NavBar from "../nav/navBar/NavBar";
-// import PhotoInput from "../addPhoto/PhotoInput";
+import PhotoInputToGallery from '../addToGallery/PhotoInputToGallery';
 
-class EventDashboard extends Component {
-  render() {
-    return (
-      <>
-        <NavBar />
-        <EventList />
-        {/* <PhotoInput  photos={this.props.photos} profile={this.props.profile}/> */}
-      </>
-    );
-  }
+
+
+
+const EventDashboard = ({ photos }) => {
+
+  return (
+    <>
+      <NavBar />
+      <EventList />
+      <PhotoInputToGallery photos={photos} />
+    </>
+  );
 }
 
 export default EventDashboard;

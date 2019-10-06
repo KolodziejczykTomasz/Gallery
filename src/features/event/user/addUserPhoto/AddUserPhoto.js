@@ -7,7 +7,7 @@ import DropzoneInput from './DropzoneInput';
 import CropperInput from './CropperInput';
 import {  uploadProfileImage, deletePhoto, setMainPhoto } from '../userActions';
 import { toastr } from 'react-redux-toastr';
-import PhotoInput from './PhotoInput';
+import UserPhotoInput from './UserPhotoInput';
 
 
 
@@ -143,7 +143,7 @@ const AddUserPhoto = ({ uploadProfileImage, photos, profile, deletePhoto, setMai
       </Grid>
 
       <Divider />
-      <PhotoInput
+      <UserPhotoInput
         photos={photos}
         profile={profile}
         deletePhoto={handleDeletePhoto}

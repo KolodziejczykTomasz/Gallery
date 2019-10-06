@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "../reducers/rootReducer";
 import thunk from "redux-thunk";
 import firebase from "../../app/common/config/firebase";
+import 'firebase/storage'
 
 const rrfConfig = {
   userProfile: 'users',
@@ -29,3 +30,9 @@ export const configureStore = () => {
 
   return store;
 };
+
+const storage = firebase.storage();
+
+export {
+  storage, firebase as default
+}

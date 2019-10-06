@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoaderSpiner from "../spin/Spin";
 import styles from "./EventList.module.scss";
 
+
 class EventList extends Component {
   state = {
     items: "",
@@ -32,7 +33,8 @@ class EventList extends Component {
               <div className={styles.galleryItem} key={item.id} id={item.id}>
                 <img src={item.userImageURL} alt={item.user} />
               </div>
-            ))}            
+            ))}           
+            
           </div>    
       );
     }
