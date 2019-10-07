@@ -5,7 +5,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { Image, Segment, Header, Divider, Grid, Button } from 'semantic-ui-react';
 import DropzoneInput from './DropzoneInput';
 import CropperInput from './CropperInput';
-import { uploadImageToGallery } from '../addToGallery/PhotoInputToGalleryActions';
+import { uploadImageToGallery, deletePhoto } from '../addToGallery/PhotoInputToGalleryActions';
 import { toastr } from 'react-redux-toastr';
 import PhotoInputToGallery from '../addToGallery/PhotoInputToGallery';
 
@@ -22,13 +22,13 @@ const query = () => {
 
 
 const actions = {
-  uploadImageToGallery
+  uploadImageToGallery,
+  deletePhoto,
 };
 
 
 const mapState = state => ({
   auth: state.firebase.auth,
-  // profile: state.firebase.profile,
   photos: state.firestore.ordered.photos,
   loading: state.async.loading
 });
@@ -37,7 +37,7 @@ const mapState = state => ({
 
 
 
-const AddToGallery = ({ uploadImageToGallery, photos, loading }) => {
+const AddToGallery = ({ uploadImageToGallery, photos, deletePhoto, loading }) => {
   const [files, setFiles] = useState([]);
   const [cropResult, setCropResult] = useState('');
   const [image, setImage] = useState(null);
@@ -64,6 +64,13 @@ const AddToGallery = ({ uploadImageToGallery, photos, loading }) => {
     }
   };
 
+  const handleDeletePhoto = async photo => {
+    try {
+      await deletePhoto(photo);
+    } catch (error) {
+      toastr.error('Oops', error.message);
+    }
+  };
 
 
 
@@ -127,6 +134,7 @@ const AddToGallery = ({ uploadImageToGallery, photos, loading }) => {
       <Divider />
       <PhotoInputToGallery
         photos={photos}
+        deletePhoto={handleDeletePhoto}
       />
     </Segment>
   );

@@ -31,7 +31,7 @@ class EventList extends Component {
           <div className={styles.gallery}>
             {items.map(item => (
               <div className={styles.galleryItem} key={item.id} id={item.id}>
-                <img src={item.userImageURL} alt={item.user} />
+                <img className={styles.galleryItemImg}src={item.userImageURL} alt={item.user} />
               </div>
             ))}           
             

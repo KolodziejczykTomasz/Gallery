@@ -23,7 +23,7 @@ class App extends Component {
               <Container>   
                  <Route exact path="/" component={HomePage} />          
                 <Route path="/event" component={EventDashboard} />
-                <Route path="/addtogallery" render={() => <AddToGallery uploadImge/>} />
+                <Route path="/addtogallery" render={() => <AddToGallery />} />
                 <Route path='/settings' component={SettingsDashboard} />
               </Container>
             </Fragment>

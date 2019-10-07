@@ -1,18 +1,18 @@
 import React from 'react';
 import EventList from "../eventList/EvenList";
 import NavBar from "../nav/navBar/NavBar";
-import PhotoInputToGallery from '../addToGallery/PhotoInputToGallery';
+import Input from '../Input/Input';
 
 
 
 
-const EventDashboard = ({ photos }) => {
+const EventDashboard = () => {
 
   return (
     <>
       <NavBar />
       <EventList />
-      <PhotoInputToGallery photos={photos} />
+      <Input />
     </>
   );
 }

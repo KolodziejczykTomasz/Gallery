@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Header, Card, Image } from "semantic-ui-react";
 
 
-const PhotoInputToGallery = ({ photos }) => {
+const PhotoInputToGallery = ({ photos, deletePhoto }) => {
 
     return (
         <Fragment>
@@ -11,7 +11,9 @@ const PhotoInputToGallery = ({ photos }) => {
                 {photos && photos.map(photo => (
                     <Card key={photo.id}>
                         <Image src={photo.url} />
+                        
                     </Card>
+
                 ))}
             </Card.Group>
         </Fragment>
